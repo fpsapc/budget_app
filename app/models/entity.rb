@@ -6,7 +6,6 @@ class Entity < ApplicationRecord
   validates :amount, presence: true, numericality: { greater_than: 0, less_than: 100_000_000 }
   validates :user_id, presence: true
 
-
   validate :author_belongs_to_user
 
   private
