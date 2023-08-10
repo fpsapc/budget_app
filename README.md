@@ -2,7 +2,7 @@
 
 <!-- TABLE OF CONTENTS -->
 
-# 📗 Table of Contents
+ Budget App
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Catalog of my things ](#-budget-app-)
