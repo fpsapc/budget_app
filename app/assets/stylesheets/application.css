@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Proxima+Nova");
 
-/* require font-awesome */
-
 :root {
   --main-color: #3778c2;
   --second-color: #5fb523;
@@ -22,8 +20,6 @@ body {
 }
 
 nav {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr); */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
