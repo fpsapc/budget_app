@@ -27,7 +27,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 CATALOG OF MI THINGS <a name="about-project"></a>
+# 📖 Budget App <a name="about-project"></a>
 
 
 The Ruby on Rails capstone project is about building a mobile web application where someone can manage his budget: He will provide list of transactions associated with a category, so that he can see how much money he spent and on what.
@@ -149,7 +149,7 @@ To run tests, run the following command:
 You can deploy this project using:
 
 ```sh
-  www.render.com
+  [Visit Render](https://render.com/)
   by following the docs instructions
 ```
 
