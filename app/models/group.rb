@@ -1,9 +1,11 @@
 class Group < ApplicationRecord
-  validates :name, presence: true
-  validates :icon, presence: true
-  validates :user_id, presence: true
-
   belongs_to :user
+  has_many :entities, dependent: :delete_all
 
-  has_many :entities, dependent: :destroy
+  validates :name, presence: true, length: { maximum: 100 }
+  validates :icon, presence: true
+
+  def recent_transactions
+    entities.order(created_at: :desc).limit(5)
+  end
 end

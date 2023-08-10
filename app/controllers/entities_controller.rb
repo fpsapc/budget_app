@@ -8,12 +8,21 @@ class EntitiesController < ApplicationController
     @total_amount = @entities.sum(:amount)
   end
 
+  def new
+    @group = Group.find(params[:group_id])
+    @entity = Entity.new
+  end
+
   # POST /items
   def create
-    @entities = current_user.item.new(item_params)
+    @group = Group.find(params[:group_id])
+    @entity = @group.entities.build(entity_params) # Build a new entity associated with the group
 
-    if @entities.save
-      redirect_to group_entities_path, notice: 'Transaction added successfully'
+    @entity.user_id = current_user.id # Set the user association
+    @entity.author_id = current_user.id # Set the author association (if applicable)
+
+    if @entity.save
+      redirect_to group_entities_path(@group), notice: 'Transaction added successfully'
     else
       render :new, alert: 'Failed to add transaction'
     end
@@ -21,7 +30,7 @@ class EntitiesController < ApplicationController
 
   # DELETE /items/1
   def destroy
-    @entities = Item.find(params[:id])
+    @entity = Entity.find(params[:id])
 
     if @entity.destroy
       redirect_to group_entities_path, notice: 'Transaction removed successfully'
@@ -34,11 +43,11 @@ class EntitiesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_entity
-    @item = Item.find(params[:id])
+    @item = Entity.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def entity_params
-    params.permit(:name, :amount, :group_id)
+    params.require(:entity).permit(:name, :amount, :group_id)
   end
 end

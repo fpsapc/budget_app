@@ -1,11 +1,11 @@
 class Entity < ApplicationRecord
-  validates :name, presence: true
-  validates :amount, presence: true, numericality: { greater_than: 0 }
-  validates :author_id, presence: true
-  validates :user_id, presence: true
-
   belongs_to :user, foreign_key: :author_id
   belongs_to :group
+
+  validates :name, presence: true, length: { maximum: 100 }
+  validates :amount, presence: true, numericality: { greater_than: 0, less_than: 100_000_000 }
+  validates :user_id, presence: true
+
 
   validate :author_belongs_to_user
 
