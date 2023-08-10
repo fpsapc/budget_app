@@ -5,7 +5,7 @@
  Budget App
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Catalog of my things ](#-budget-app-)
+- [📖 budget App ](#-budget-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
