@@ -148,10 +148,11 @@ To run tests, run the following command:
 
 You can deploy this project using:
 
-```sh
-  [Visit Render](https://render.com/)
+
+ <a href="https://render.com/">Visit Render</a>
+  
   by following the docs instructions
-```
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
